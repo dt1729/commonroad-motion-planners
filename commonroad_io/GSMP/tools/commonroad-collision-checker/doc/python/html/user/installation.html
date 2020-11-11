@@ -1,0 +1,384 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>CommonRoad-Collision-Checker &mdash; CommonRoad-Collision-Checker 2019.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Overview" href="overview.html" />
+    <link rel="prev" title="User Manual" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> CommonRoad-Collision-Checker
+          
+
+          
+            
+            <img src="../_static/commonroad_white150.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2019.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User Manual</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">CommonRoad-Collision-Checker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#system-requirements">System Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dependencies">Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-of-third-party-libraries">Installation of Third Party Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#full-installation-with-anaconda">Full Installation with Anaconda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#documentation">Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#python-wrapper-pycrcc">Python Wrapper pycrcc</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview.html#creating-basic-geometric-shapes">Creating Basic Geometric Shapes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview.html#performing-collision-checks-between-basic-shapes">Performing Collision Checks Between Basic Shapes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview.html#creating-groups-of-shapes">Creating Groups of Shapes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview.html#time-variant-obstacles">Time-variant Obstacles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview.html#creating-a-collision-checker">Creating a Collision Checker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview.html#intersection-between-segments-and-obstacles">Intersection Between Segments and Obstacles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#commonroad-io-interface">commonroad-io Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview.html#converting-commonroad-objects-to-collision-objects">Converting CommonRoad Objects to Collision Objects</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview.html#creating-a-collision-checker-from-the-scenario">Creating a Collision Checker from the Scenario</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview.html#minkowski-sum">Minkowski Sum</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="visualization.html">Visualization Manual</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="visualization.html#importing-draw-object">Importing <code class="docutils literal notranslate"><span class="pre">draw_object</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization.html#additional-draw-params">Additional <code class="docutils literal notranslate"><span class="pre">draw_params</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization.html#drawing-shapes">Drawing shapes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">CommonRoad-Collision-Checker Python API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/python_wrapper.html">Python Wrapper pycrcc</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/python_wrapper.html#point-class"><code class="docutils literal notranslate"><span class="pre">Point</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/python_wrapper.html#rectaabb-class"><code class="docutils literal notranslate"><span class="pre">RectAABB</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/python_wrapper.html#rectobb-class"><code class="docutils literal notranslate"><span class="pre">RectOBB</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/python_wrapper.html#triangle-class"><code class="docutils literal notranslate"><span class="pre">Triangle</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/python_wrapper.html#circle-class"><code class="docutils literal notranslate"><span class="pre">Circle</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/python_wrapper.html#polygon-class"><code class="docutils literal notranslate"><span class="pre">Polygon</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/python_wrapper.html#timevariantcollisionobject-class"><code class="docutils literal notranslate"><span class="pre">TimeVariantCollisionObject</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/python_wrapper.html#shapegroup-class"><code class="docutils literal notranslate"><span class="pre">ShapeGroup</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/python_wrapper.html#collisionchecker-class"><code class="docutils literal notranslate"><span class="pre">CollisionChecker</span></code> class</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/commonroad_io.html">commonroad-io Interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/commonroad_io.html#module-commonroad_cc.collision_detection.pycrcc_collision_dispatch">collision_detection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/commonroad_io.html#module-commonroad_cc.visualization.draw_dispatch">draw_dispatch</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CommonRoad-Collision-Checker</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">User Manual</a> &raquo;</li>
+        
+      <li>CommonRoad-Collision-Checker</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/user/installation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="commonroad-collision-checker">
+<h1>CommonRoad-Collision-Checker<a class="headerlink" href="#commonroad-collision-checker" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="system-requirements">
+<h2>System Requirements<a class="headerlink" href="#system-requirements" title="Permalink to this headline">¶</a></h2>
+<p>The software is written in Python 3.6 and tested on MacOs and Linux. The usage of the <a class="reference external" href="http://www.anaconda.com/download/#download">Anaconda</a> Python distribution is strongly recommended. The requirements for the C++ collision checker library are a C++11 compiler and CMake. The requirements for the Python wrapper are C++11 compiler, CMake, and Python 3.6 with development headers. If you are a Mac user, we recommend you to use <a class="reference external" href="https://brew.sh">Homebrew</a>, allowing you to install required dependencies such as Eigen.</p>
+</div>
+<div class="section" id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
+<p>Following third party libraries are needed to be installed for the CommonRoad-Collision-Checker:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/flexible-collision-library/fcl">FCL – The Flexible Collision Library</a></p></li>
+<li><p><a class="reference external" href="https://github.com/danfis/libccd">libccd</a></p></li>
+<li><p><a class="reference external" href="https://eigen.tuxfamily.org/dox/">Eigen3</a></p></li>
+</ul>
+<p>Following packages are necessary, if you want to use the CommonRoad-Collision-Checker in Python with <a class="reference external" href="https://pypi.org/project/commonroad-io/">commonroad-io</a>:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/pybind/pybind11">pybind11</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/commonroad-io/">commonroad-io</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/triangle/">Triangle</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/matplotlib/">matplotlib</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/Shapely/">Shapely</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/numpy/">numpy</a></p></li>
+</ul>
+<p>Following packages are necessary, if you want to execute the available tutorials:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pypi.org/project/jupyter/">Jupyter</a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="installation-of-third-party-libraries">
+<h1>Installation of Third Party Libraries<a class="headerlink" href="#installation-of-third-party-libraries" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic">
+<li><p>Install <a class="reference external" href="https://github.com/danfis/libccd">libccd</a>:</p>
+<p>Clone the repository from <a class="reference external" href="https://github.com/danfis/libccd">https://github.com/danfis/libccd</a> (master branch) and execute the following commands.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> libccd
+$ mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
+$ cmake -G <span class="s2">&quot;Unix Makefiles&quot;</span> -DENABLE_DOUBLE_PRECISION<span class="o">=</span>ON -DBUILD_SHARED_LIBS<span class="o">=</span>ON ..
+$ make
+$ sudo make install
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Install <a class="reference external" href="https://github.com/flexible-collision-library/fcl">FCL – The Flexible Collision Library</a>:</p>
+<p>Clone the repository from <a class="reference external" href="https://github.com/flexible-collision-library/fcl">https://github.com/flexible-collision-library/fcl</a> (master branch) and execute the following commands.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> fcl
+
+linux: $ sudo apt-get install libboost-dev libboost-thread-dev libboost-test-dev libboost-filesystem-dev libeigen3-dev
+macOS: $ brew install eigen
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
+$ cmake ..
+$ make
+$ sudo make install
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="full-installation-with-anaconda">
+<h2>Full Installation with Anaconda<a class="headerlink" href="#full-installation-with-anaconda" title="Permalink to this headline">¶</a></h2>
+<p>It is assumed that you have installed <a class="reference external" href="http://www.anaconda.com/download/#download">Anaconda</a> and that your Anaconda environment is called <strong>commonroad-py36</strong>.</p>
+<ol class="arabic">
+<li><p>Open your console in the root folder of the CommonRoad-Collision-Checker.</p></li>
+<li><p>Activate your environment with</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda activate commonroad-py36
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Compile the CommonRoad-Collision-Checker library by running</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkdir build
+$ <span class="nb">cd</span> build
+$ cmake -DADD_PYTHON_BINDINGS<span class="o">=</span>TRUE -DPATH_TO_PYTHON_ENVIRONMENT<span class="o">=</span><span class="s2">&quot;/path/to/your/anaconda3/envs/commonroad-py36&quot;</span> -DPYTHON_VERSION<span class="o">=</span><span class="s2">&quot;3.6&quot;</span> -DCMAKE_BUILD_TYPE<span class="o">=</span>Release ..
+</pre></div>
+</div>
+<p>The next line refers only to users of Mac OS X 10+:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sed -i <span class="s1">&#39;&#39;</span> <span class="s1">&#39;s!-lccd!/usr/local/lib/libccd.2.0.dylib!&#39;</span> python_binding/CMakeFiles/pycrcc.dir/link.txt
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ make
+</pre></div>
+</div>
+<dl class="simple">
+<dt><strong>Note that you have to replace</strong></dt><dd><ul class="simple">
+<li><p><em>“/path/to/your/anaconda3/envs/commonroad-py36”</em> with the path to your Anaconda environment;</p></li>
+<li><p><em>“3.6”</em>  with the Python version of your Anaconda environment.</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>(Optional) Install the CommonRoad-Collision-Checker with</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ..
+$ python setup.py install
+</pre></div>
+</div>
+<p><strong>OR</strong> add the root folder of the CommonRoad-Collision-Checker to your Python-Interpreter.</p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
+<p>The documentation of the C++ API can be found under doc/cpp/html/index.html.</p>
+<p>The documentation of the Python wrapper can be found under doc/python/html/index.html.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="overview.html" class="btn btn-neutral float-right" title="Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="User Manual" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Technical University of Munich, Professorship Cyber-Physical Systems
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

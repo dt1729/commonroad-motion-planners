@@ -1,0 +1,299 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>CommonRoad-Collision-Checker Documentation &mdash; CommonRoad-Collision-Checker 2019.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="User Manual" href="user/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home"> CommonRoad-Collision-Checker
+          
+
+          
+            
+            <img src="_static/commonroad_white150.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2019.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="user/index.html">User Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user/installation.html">CommonRoad-Collision-Checker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user/installation.html#system-requirements">System Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/installation.html#dependencies">Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user/installation.html#installation-of-third-party-libraries">Installation of Third Party Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user/installation.html#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user/installation.html#full-installation-with-anaconda">Full Installation with Anaconda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/installation.html#documentation">Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user/overview.html">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user/overview.html#python-wrapper-pycrcc">Python Wrapper pycrcc</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user/overview.html#creating-basic-geometric-shapes">Creating Basic Geometric Shapes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user/overview.html#performing-collision-checks-between-basic-shapes">Performing Collision Checks Between Basic Shapes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user/overview.html#creating-groups-of-shapes">Creating Groups of Shapes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user/overview.html#time-variant-obstacles">Time-variant Obstacles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user/overview.html#creating-a-collision-checker">Creating a Collision Checker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user/overview.html#intersection-between-segments-and-obstacles">Intersection Between Segments and Obstacles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="user/overview.html#commonroad-io-interface">commonroad-io Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user/overview.html#converting-commonroad-objects-to-collision-objects">Converting CommonRoad Objects to Collision Objects</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user/overview.html#creating-a-collision-checker-from-the-scenario">Creating a Collision Checker from the Scenario</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user/overview.html#minkowski-sum">Minkowski Sum</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user/visualization.html">Visualization Manual</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user/visualization.html#importing-draw-object">Importing <code class="docutils literal notranslate"><span class="pre">draw_object</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/visualization.html#additional-draw-params">Additional <code class="docutils literal notranslate"><span class="pre">draw_params</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/visualization.html#drawing-shapes">Drawing shapes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">CommonRoad-Collision-Checker Python API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/python_wrapper.html">Python Wrapper pycrcc</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/python_wrapper.html#point-class"><code class="docutils literal notranslate"><span class="pre">Point</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/python_wrapper.html#rectaabb-class"><code class="docutils literal notranslate"><span class="pre">RectAABB</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/python_wrapper.html#rectobb-class"><code class="docutils literal notranslate"><span class="pre">RectOBB</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/python_wrapper.html#triangle-class"><code class="docutils literal notranslate"><span class="pre">Triangle</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/python_wrapper.html#circle-class"><code class="docutils literal notranslate"><span class="pre">Circle</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/python_wrapper.html#polygon-class"><code class="docutils literal notranslate"><span class="pre">Polygon</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/python_wrapper.html#timevariantcollisionobject-class"><code class="docutils literal notranslate"><span class="pre">TimeVariantCollisionObject</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/python_wrapper.html#shapegroup-class"><code class="docutils literal notranslate"><span class="pre">ShapeGroup</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/python_wrapper.html#collisionchecker-class"><code class="docutils literal notranslate"><span class="pre">CollisionChecker</span></code> class</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/commonroad_io.html">commonroad-io Interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/commonroad_io.html#module-commonroad_cc.collision_detection.pycrcc_collision_dispatch">collision_detection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/commonroad_io.html#module-commonroad_cc.visualization.draw_dispatch">draw_dispatch</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">CommonRoad-Collision-Checker</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>CommonRoad-Collision-Checker Documentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="commonroad-collision-checker-documentation">
+<h1>CommonRoad-Collision-Checker Documentation<a class="headerlink" href="#commonroad-collision-checker-documentation" title="Permalink to this headline">¶</a></h1>
+<p>The CommonRoad-Collision-Checker can be used to test if two or more objects collide. The library is written in C++ and depends on the <a class="reference external" href="https://github.com/flexible-collision-library/fcl">FCL – The Flexible Collision Library</a>. The CommonRoad-Collision-Checker can be used as C++ library; however, there exists a Python wrapper using <a class="reference external" href="https://github.com/pybind/pybind11">pybind11</a>. Furthermore, the CommonRoad-Collision-Checker can seemlessly work with <a class="reference external" href="https://pypi.org/project/commonroad-io/">commonroad-io</a>.</p>
+<div class="section" id="contact-information">
+<h2>Contact information<a class="headerlink" href="#contact-information" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Website</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://commonroad.in.tum.de/">http://commonroad.in.tum.de</a></p>
+</dd>
+<dt class="field-even">Email</dt>
+<dd class="field-even"><p><a class="reference external" href="mailto:commonroad-i06&#37;&#52;&#48;in&#46;tum&#46;de">commonroad-i06<span>&#64;</span>in<span>&#46;</span>tum<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</div>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>A detailed overview of the project is <a class="reference internal" href="user/overview.html#overview"><span class="std std-ref">available here</span></a>.</p>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="user/index.html">User Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user/installation.html">CommonRoad-Collision-Checker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user/installation.html#installation-of-third-party-libraries">Installation of Third Party Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user/installation.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user/overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user/visualization.html">Visualization Manual</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">CommonRoad-Collision-Checker Python API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/python_wrapper.html">Python Wrapper pycrcc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/commonroad_io.html">commonroad-io Interface</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="user/index.html" class="btn btn-neutral float-right" title="User Manual" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Technical University of Munich, Professorship Cyber-Physical Systems
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

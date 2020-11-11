@@ -1,0 +1,4 @@
+We included some scenarios in this directory.
+You can find more scenarios under _https://gitlab.lrz.de/tum-cps/commonroad-scenarios/-/tree/master/scenarios_.
+Currently, CommonRoad-Search supports no cooperative scenarios.
+Place the scenarios within this folder without subdirectories.

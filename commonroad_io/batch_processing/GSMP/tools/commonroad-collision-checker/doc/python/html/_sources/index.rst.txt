@@ -1,0 +1,25 @@
+==========================================
+CommonRoad-Collision-Checker Documentation
+==========================================
+
+The CommonRoad-Collision-Checker can be used to test if two or more objects collide. The library is written in C++ and depends on the `FCL -- The Flexible Collision Library <https://github.com/flexible-collision-library/fcl>`_. The CommonRoad-Collision-Checker can be used as C++ library; however, there exists a Python wrapper using `pybind11 <https://github.com/pybind/pybind11>`_. Furthermore, the CommonRoad-Collision-Checker can seemlessly work with `commonroad-io <https://pypi.org/project/commonroad-io/>`_.
+
+Contact information
+===================
+
+:Website: `http://commonroad.in.tum.de <https://commonroad.in.tum.de/>`_
+:Email: `commonroad-i06@in.tum.de <commonroad-i06@in.tum.de>`_
+
+
+Overview
+========
+
+A detailed overview of the project is :ref:`available here<overview>`.
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   user/index.rst   
+   api/index.rst

@@ -1,0 +1,340 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>commonroad-io Interface &mdash; CommonRoad-Collision-Checker 2019.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Python Wrapper pycrcc" href="python_wrapper.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> CommonRoad-Collision-Checker
+          
+
+          
+            
+            <img src="../_static/commonroad_white150.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2019.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../user/index.html">User Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../user/installation.html">CommonRoad-Collision-Checker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user/installation.html#system-requirements">System Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user/installation.html#dependencies">Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../user/installation.html#installation-of-third-party-libraries">Installation of Third Party Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user/installation.html#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user/installation.html#full-installation-with-anaconda">Full Installation with Anaconda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user/installation.html#documentation">Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../user/overview.html">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user/overview.html#python-wrapper-pycrcc">Python Wrapper pycrcc</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../user/overview.html#creating-basic-geometric-shapes">Creating Basic Geometric Shapes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../user/overview.html#performing-collision-checks-between-basic-shapes">Performing Collision Checks Between Basic Shapes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../user/overview.html#creating-groups-of-shapes">Creating Groups of Shapes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../user/overview.html#time-variant-obstacles">Time-variant Obstacles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../user/overview.html#creating-a-collision-checker">Creating a Collision Checker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../user/overview.html#intersection-between-segments-and-obstacles">Intersection Between Segments and Obstacles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../user/overview.html#commonroad-io-interface">commonroad-io Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../user/overview.html#converting-commonroad-objects-to-collision-objects">Converting CommonRoad Objects to Collision Objects</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../user/overview.html#creating-a-collision-checker-from-the-scenario">Creating a Collision Checker from the Scenario</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../user/overview.html#minkowski-sum">Minkowski Sum</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../user/visualization.html">Visualization Manual</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user/visualization.html#importing-draw-object">Importing <code class="docutils literal notranslate"><span class="pre">draw_object</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user/visualization.html#additional-draw-params">Additional <code class="docutils literal notranslate"><span class="pre">draw_params</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user/visualization.html#drawing-shapes">Drawing shapes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">CommonRoad-Collision-Checker Python API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="python_wrapper.html">Python Wrapper pycrcc</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="python_wrapper.html#point-class"><code class="docutils literal notranslate"><span class="pre">Point</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_wrapper.html#rectaabb-class"><code class="docutils literal notranslate"><span class="pre">RectAABB</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_wrapper.html#rectobb-class"><code class="docutils literal notranslate"><span class="pre">RectOBB</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_wrapper.html#triangle-class"><code class="docutils literal notranslate"><span class="pre">Triangle</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_wrapper.html#circle-class"><code class="docutils literal notranslate"><span class="pre">Circle</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_wrapper.html#polygon-class"><code class="docutils literal notranslate"><span class="pre">Polygon</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_wrapper.html#timevariantcollisionobject-class"><code class="docutils literal notranslate"><span class="pre">TimeVariantCollisionObject</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_wrapper.html#shapegroup-class"><code class="docutils literal notranslate"><span class="pre">ShapeGroup</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_wrapper.html#collisionchecker-class"><code class="docutils literal notranslate"><span class="pre">CollisionChecker</span></code> class</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">commonroad-io Interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-commonroad_cc.collision_detection.pycrcc_collision_dispatch">collision_detection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-commonroad_cc.visualization.draw_dispatch">draw_dispatch</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CommonRoad-Collision-Checker</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">CommonRoad-Collision-Checker Python API</a> &raquo;</li>
+        
+      <li>commonroad-io Interface</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/commonroad_io.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="commonroad-io-interface">
+<h1>commonroad-io Interface<a class="headerlink" href="#commonroad-io-interface" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-commonroad_cc.collision_detection.pycrcc_collision_dispatch">
+<span id="collision-detection"></span><h2>collision_detection<a class="headerlink" href="#module-commonroad_cc.collision_detection.pycrcc_collision_dispatch" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="commonroad_cc.collision_detection.pycrcc_collision_dispatch.create_collision_checker">
+<code class="descclassname">commonroad_cc.collision_detection.pycrcc_collision_dispatch.</code><code class="descname">create_collision_checker</code><span class="sig-paren">(</span><em>obj</em>, <em>params=None</em>, <em>collision_checker_func=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/commonroad_cc/collision_detection/pycrcc_collision_dispatch.html#create_collision_checker"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#commonroad_cc.collision_detection.pycrcc_collision_dispatch.create_collision_checker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to convert a commonroad-io scenario to a C++ collision checker.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> – the commonroad-io scenario</p></li>
+<li><p><strong>params</strong> – optional parameters, e.g. adding the minkowski sum with a circle</p></li>
+<li><p><strong>collision_object_func</strong> – specify the converter function (it is usually not necessary to change the default)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="python_wrapper.html#pycrcc.CollisionChecker" title="pycrcc.CollisionChecker"><code class="xref py py-class docutils literal notranslate"><span class="pre">CollisionChecker</span></code></a></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Returns the C++ collision checker</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="commonroad_cc.collision_detection.pycrcc_collision_dispatch.create_collision_object">
+<code class="descclassname">commonroad_cc.collision_detection.pycrcc_collision_dispatch.</code><code class="descname">create_collision_object</code><span class="sig-paren">(</span><em>obj</em>, <em>params=None</em>, <em>collision_object_func=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/commonroad_cc/collision_detection/pycrcc_collision_dispatch.html#create_collision_object"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#commonroad_cc.collision_detection.pycrcc_collision_dispatch.create_collision_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main function to convert a commonroad-io shape to a C++ collision object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> – the object or list of objects (with all the same type) to be converted to C++ collision objects</p></li>
+<li><p><strong>params</strong> – optional parameters, e.g. adding the minkowski sum with a circle</p></li>
+<li><p><strong>collision_object_func</strong> – specify the converter function (it is usually not necessary to change the default)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">CollisionObject</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Returns the C++ collision object</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-commonroad_cc.visualization.draw_dispatch">
+<span id="draw-dispatch"></span><h2>draw_dispatch<a class="headerlink" href="#module-commonroad_cc.visualization.draw_dispatch" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="commonroad_cc.visualization.draw_dispatch.draw_object">
+<code class="descclassname">commonroad_cc.visualization.draw_dispatch.</code><code class="descname">draw_object</code><span class="sig-paren">(</span><em>obj</em>, <em>plot_limits=None</em>, <em>ax=None</em>, <em>draw_params=None</em>, <em>draw_func=None</em>, <em>handles=None</em>, <em>call_stack=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/commonroad_cc/visualization/draw_dispatch.html#draw_object"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#commonroad_cc.visualization.draw_dispatch.draw_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main function for drawing objects from the commonroad-collision-checker.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> – the object or list of objects (with all the same type) to be plotted</p></li>
+<li><p><strong>plot_limits</strong> – list of [x_min, x_max, y_min, y_max] that defines the plotted area</p></li>
+<li><p><strong>ax</strong> – axes object from matplotlib</p></li>
+<li><p><strong>draw_params</strong> – parameters for plotting given by a nested dict that recreates the structure of an object,
+see documentation for full overview over the structure. If parameters are not set,
+the default setting are used.</p></li>
+<li><p><strong>draw_func</strong> – specify the drawing function (usually not necessary to change default)</p></li>
+<li><p><strong>handles</strong> – dict that assign to every object_id of all plotted obstacles the corresponding patch handles</p></li>
+<li><p><strong>call_stack</strong> – tuple of string containing the call stack, which allows for differentiation of plotting styles
+depending on the call stack of draw_object, (usually ‘None’!)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns matplotlib patch object for draw_funcs that actually draw a patch (used internally for creating handles dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="python_wrapper.html" class="btn btn-neutral float-left" title="Python Wrapper pycrcc" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Technical University of Munich, Professorship Cyber-Physical Systems
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

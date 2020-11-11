@@ -1,0 +1,6 @@
+commonroad-io
+numpy>=1.13
+shapely>=1.6.4
+matplotlib>=2.2.2
+jupyter
+triangle

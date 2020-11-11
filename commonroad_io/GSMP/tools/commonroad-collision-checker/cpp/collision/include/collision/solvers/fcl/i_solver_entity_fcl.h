@@ -1,0 +1,19 @@
+//*  Author: Vitaliy Rusinov
+
+#pragma once
+
+#include "collision/solvers/fcl/fcl_entity_type.h"
+
+#include <memory>
+namespace collision {
+namespace solvers {
+namespace solverFCL {
+class ISolverEntity_FCL {
+public:
+  virtual FCL_COLLISION_ENTITY_TYPE getFclEntityType(void) const {
+    return FCL_COLLISION_ENTITY_TYPE_UNKNOWN;
+  }
+};
+} // namespace solverFCL
+} // namespace solvers
+} // namespace collision

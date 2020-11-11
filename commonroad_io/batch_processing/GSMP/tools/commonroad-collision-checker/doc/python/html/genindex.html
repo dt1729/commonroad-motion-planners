@@ -1,0 +1,563 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Index &mdash; CommonRoad-Collision-Checker 2019.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> CommonRoad-Collision-Checker
+          
+
+          
+            
+            <img src="_static/commonroad_white150.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2019.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="user/index.html">User Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user/installation.html">CommonRoad-Collision-Checker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user/installation.html#system-requirements">System Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/installation.html#dependencies">Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user/installation.html#installation-of-third-party-libraries">Installation of Third Party Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user/installation.html#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user/installation.html#full-installation-with-anaconda">Full Installation with Anaconda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/installation.html#documentation">Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user/overview.html">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user/overview.html#python-wrapper-pycrcc">Python Wrapper pycrcc</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user/overview.html#creating-basic-geometric-shapes">Creating Basic Geometric Shapes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user/overview.html#performing-collision-checks-between-basic-shapes">Performing Collision Checks Between Basic Shapes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user/overview.html#creating-groups-of-shapes">Creating Groups of Shapes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user/overview.html#time-variant-obstacles">Time-variant Obstacles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user/overview.html#creating-a-collision-checker">Creating a Collision Checker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user/overview.html#intersection-between-segments-and-obstacles">Intersection Between Segments and Obstacles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="user/overview.html#commonroad-io-interface">commonroad-io Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user/overview.html#converting-commonroad-objects-to-collision-objects">Converting CommonRoad Objects to Collision Objects</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user/overview.html#creating-a-collision-checker-from-the-scenario">Creating a Collision Checker from the Scenario</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user/overview.html#minkowski-sum">Minkowski Sum</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user/visualization.html">Visualization Manual</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user/visualization.html#importing-draw-object">Importing <code class="docutils literal notranslate"><span class="pre">draw_object</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/visualization.html#additional-draw-params">Additional <code class="docutils literal notranslate"><span class="pre">draw_params</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/visualization.html#drawing-shapes">Drawing shapes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">CommonRoad-Collision-Checker Python API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/python_wrapper.html">Python Wrapper pycrcc</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/python_wrapper.html#point-class"><code class="docutils literal notranslate"><span class="pre">Point</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/python_wrapper.html#rectaabb-class"><code class="docutils literal notranslate"><span class="pre">RectAABB</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/python_wrapper.html#rectobb-class"><code class="docutils literal notranslate"><span class="pre">RectOBB</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/python_wrapper.html#triangle-class"><code class="docutils literal notranslate"><span class="pre">Triangle</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/python_wrapper.html#circle-class"><code class="docutils literal notranslate"><span class="pre">Circle</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/python_wrapper.html#polygon-class"><code class="docutils literal notranslate"><span class="pre">Polygon</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/python_wrapper.html#timevariantcollisionobject-class"><code class="docutils literal notranslate"><span class="pre">TimeVariantCollisionObject</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/python_wrapper.html#shapegroup-class"><code class="docutils literal notranslate"><span class="pre">ShapeGroup</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/python_wrapper.html#collisionchecker-class"><code class="docutils literal notranslate"><span class="pre">CollisionChecker</span></code> class</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/commonroad_io.html">commonroad-io Interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/commonroad_io.html#module-commonroad_cc.collision_detection.pycrcc_collision_dispatch">collision_detection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/commonroad_io.html#module-commonroad_cc.visualization.draw_dispatch">draw_dispatch</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CommonRoad-Collision-Checker</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Index</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#_"><strong>_</strong></a>
+ | <a href="#A"><strong>A</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#L"><strong>L</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
+ | <a href="#O"><strong>O</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ | <a href="#V"><strong>V</strong></a>
+ | <a href="#W"><strong>W</strong></a>
+ | <a href="#X"><strong>X</strong></a>
+ | <a href="#Y"><strong>Y</strong></a>
+ 
+</div>
+<h2 id="_">_</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/python_wrapper.html#pycrcc.Circle.__init__">__init__() (pycrcc.Circle method)</a>
+
+      <ul>
+        <li><a href="api/python_wrapper.html#pycrcc.CollisionChecker.__init__">(pycrcc.CollisionChecker method)</a>
+</li>
+        <li><a href="api/python_wrapper.html#pycrcc.Point.__init__">(pycrcc.Point method)</a>
+</li>
+        <li><a href="api/python_wrapper.html#pycrcc.Polygon.__init__">(pycrcc.Polygon method)</a>
+</li>
+        <li><a href="api/python_wrapper.html#pycrcc.RectAABB.__init__">(pycrcc.RectAABB method)</a>
+</li>
+        <li><a href="api/python_wrapper.html#pycrcc.RectOBB.__init__">(pycrcc.RectOBB method)</a>
+</li>
+        <li><a href="api/python_wrapper.html#pycrcc.ShapeGroup.__init__">(pycrcc.ShapeGroup method)</a>
+</li>
+        <li><a href="api/python_wrapper.html#pycrcc.TimeVariantCollisionObject.__init__">(pycrcc.TimeVariantCollisionObject method)</a>
+</li>
+        <li><a href="api/python_wrapper.html#pycrcc.Triangle.__init__">(pycrcc.Triangle method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/python_wrapper.html#pycrcc.CollisionChecker.__str__">__str__() (pycrcc.CollisionChecker method)</a>
+
+      <ul>
+        <li><a href="api/python_wrapper.html#pycrcc.Polygon.__str__">(pycrcc.Polygon method)</a>
+</li>
+        <li><a href="api/python_wrapper.html#pycrcc.RectAABB.__str__">(pycrcc.RectAABB method)</a>
+</li>
+        <li><a href="api/python_wrapper.html#pycrcc.RectOBB.__str__">(pycrcc.RectOBB method)</a>
+</li>
+        <li><a href="api/python_wrapper.html#pycrcc.Triangle.__str__">(pycrcc.Triangle method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/python_wrapper.html#pycrcc.CollisionChecker.add_collision_object">add_collision_object() (pycrcc.CollisionChecker method)</a>
+</li>
+      <li><a href="api/python_wrapper.html#pycrcc.ShapeGroup.add_shape">add_shape() (pycrcc.ShapeGroup method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/python_wrapper.html#pycrcc.CollisionChecker.any_collides">any_collides() (pycrcc.CollisionChecker method)</a>
+</li>
+      <li><a href="api/python_wrapper.html#pycrcc.TimeVariantCollisionObject.append_obstacle">append_obstacle() (pycrcc.TimeVariantCollisionObject method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/python_wrapper.html#pycrcc.Circle.center">center() (pycrcc.Circle method)</a>
+
+      <ul>
+        <li><a href="api/python_wrapper.html#pycrcc.Point.center">(pycrcc.Point method)</a>
+</li>
+        <li><a href="api/python_wrapper.html#pycrcc.RectOBB.center">(pycrcc.RectOBB method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/python_wrapper.html#pycrcc.Circle">Circle (class in pycrcc)</a>
+</li>
+      <li><a href="api/python_wrapper.html#pycrcc.Circle.collide">collide() (pycrcc.Circle method)</a>
+
+      <ul>
+        <li><a href="api/python_wrapper.html#pycrcc.CollisionChecker.collide">(pycrcc.CollisionChecker method)</a>
+</li>
+        <li><a href="api/python_wrapper.html#pycrcc.Point.collide">(pycrcc.Point method)</a>
+</li>
+        <li><a href="api/python_wrapper.html#pycrcc.Polygon.collide">(pycrcc.Polygon method)</a>
+</li>
+        <li><a href="api/python_wrapper.html#pycrcc.RectAABB.collide">(pycrcc.RectAABB method)</a>
+</li>
+        <li><a href="api/python_wrapper.html#pycrcc.RectOBB.collide">(pycrcc.RectOBB method)</a>
+</li>
+        <li><a href="api/python_wrapper.html#pycrcc.ShapeGroup.collide">(pycrcc.ShapeGroup method)</a>
+</li>
+        <li><a href="api/python_wrapper.html#pycrcc.TimeVariantCollisionObject.collide">(pycrcc.TimeVariantCollisionObject method)</a>
+</li>
+        <li><a href="api/python_wrapper.html#pycrcc.Triangle.collide">(pycrcc.Triangle method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/python_wrapper.html#pycrcc.CollisionChecker">CollisionChecker (class in pycrcc)</a>
+</li>
+      <li><a href="api/commonroad_io.html#module-commonroad_cc.collision_detection.pycrcc_collision_dispatch">commonroad_cc.collision_detection.pycrcc_collision_dispatch (module)</a>
+</li>
+      <li><a href="api/commonroad_io.html#module-commonroad_cc.visualization.draw_dispatch">commonroad_cc.visualization.draw_dispatch (module)</a>
+</li>
+      <li><a href="api/commonroad_io.html#commonroad_cc.collision_detection.pycrcc_collision_dispatch.create_collision_checker">create_collision_checker() (in module commonroad_cc.collision_detection.pycrcc_collision_dispatch)</a>
+</li>
+      <li><a href="api/commonroad_io.html#commonroad_cc.collision_detection.pycrcc_collision_dispatch.create_collision_object">create_collision_object() (in module commonroad_cc.collision_detection.pycrcc_collision_dispatch)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/commonroad_io.html#commonroad_cc.visualization.draw_dispatch.draw_object">draw_object() (in module commonroad_cc.visualization.draw_dispatch)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/python_wrapper.html#pycrcc.CollisionChecker.find_all_colliding_objects">find_all_colliding_objects() (pycrcc.CollisionChecker method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/python_wrapper.html#pycrcc.RectOBB.local_x_axis">local_x_axis() (pycrcc.RectOBB method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/python_wrapper.html#pycrcc.RectOBB.local_y_axis">local_y_axis() (pycrcc.RectOBB method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/python_wrapper.html#pycrcc.RectAABB.max_x">max_x() (pycrcc.RectAABB method)</a>
+</li>
+      <li><a href="api/python_wrapper.html#pycrcc.RectAABB.max_y">max_y() (pycrcc.RectAABB method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/python_wrapper.html#pycrcc.RectAABB.min_x">min_x() (pycrcc.RectAABB method)</a>
+</li>
+      <li><a href="api/python_wrapper.html#pycrcc.RectAABB.min_y">min_y() (pycrcc.RectAABB method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/python_wrapper.html#pycrcc.CollisionChecker.number_of_obstacles">number_of_obstacles() (pycrcc.CollisionChecker method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/python_wrapper.html#pycrcc.TimeVariantCollisionObject.obstacle_at_time">obstacle_at_time() (pycrcc.TimeVariantCollisionObject method)</a>
+</li>
+      <li><a href="api/python_wrapper.html#pycrcc.CollisionChecker.obstacles">obstacles() (pycrcc.CollisionChecker method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/python_wrapper.html#pycrcc.ShapeGroup.overlap">overlap() (pycrcc.ShapeGroup method)</a>
+</li>
+      <li><a href="api/python_wrapper.html#pycrcc.ShapeGroup.overlap_map">overlap_map() (pycrcc.ShapeGroup method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/python_wrapper.html#pycrcc.Point">Point (class in pycrcc)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/python_wrapper.html#pycrcc.Polygon">Polygon (class in pycrcc)</a>
+</li>
+      <li><a href="api/python_wrapper.html#module-pycrcc">pycrcc (module)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/python_wrapper.html#pycrcc.Circle.r">r() (pycrcc.Circle method)</a>
+</li>
+      <li><a href="api/python_wrapper.html#pycrcc.RectOBB.r_x">r_x() (pycrcc.RectOBB method)</a>
+</li>
+      <li><a href="api/python_wrapper.html#pycrcc.RectOBB.r_y">r_y() (pycrcc.RectOBB method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/python_wrapper.html#pycrcc.CollisionChecker.raytrace">raytrace() (pycrcc.CollisionChecker method)</a>
+</li>
+      <li><a href="api/python_wrapper.html#pycrcc.RectAABB">RectAABB (class in pycrcc)</a>
+</li>
+      <li><a href="api/python_wrapper.html#pycrcc.RectOBB">RectOBB (class in pycrcc)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/python_wrapper.html#pycrcc.RectAABB.set_all">set_all() (pycrcc.RectAABB method)</a>
+</li>
+      <li><a href="api/python_wrapper.html#pycrcc.RectOBB.set_center">set_center() (pycrcc.RectOBB method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/python_wrapper.html#pycrcc.ShapeGroup">ShapeGroup (class in pycrcc)</a>
+</li>
+      <li><a href="api/python_wrapper.html#pycrcc.ShapeGroup.size">size() (pycrcc.ShapeGroup method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/python_wrapper.html#pycrcc.TimeVariantCollisionObject.time_end_idx">time_end_idx() (pycrcc.TimeVariantCollisionObject method)</a>
+</li>
+      <li><a href="api/python_wrapper.html#pycrcc.CollisionChecker.time_slice">time_slice() (pycrcc.CollisionChecker method)</a>
+</li>
+      <li><a href="api/python_wrapper.html#pycrcc.TimeVariantCollisionObject.time_start_idx">time_start_idx() (pycrcc.TimeVariantCollisionObject method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/python_wrapper.html#pycrcc.TimeVariantCollisionObject">TimeVariantCollisionObject (class in pycrcc)</a>
+</li>
+      <li><a href="api/python_wrapper.html#pycrcc.Triangle">Triangle (class in pycrcc)</a>
+</li>
+      <li><a href="api/python_wrapper.html#pycrcc.Polygon.triangle_mesh">triangle_mesh() (pycrcc.Polygon method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/python_wrapper.html#pycrcc.ShapeGroup.unpack">unpack() (pycrcc.ShapeGroup method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/python_wrapper.html#pycrcc.Polygon.vertices">vertices() (pycrcc.Polygon method)</a>
+
+      <ul>
+        <li><a href="api/python_wrapper.html#pycrcc.Triangle.vertices">(pycrcc.Triangle method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/python_wrapper.html#pycrcc.CollisionChecker.window_query">window_query() (pycrcc.CollisionChecker method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="X">X</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/python_wrapper.html#pycrcc.Circle.x">x() (pycrcc.Circle method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="Y">Y</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/python_wrapper.html#pycrcc.Circle.y">y() (pycrcc.Circle method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Technical University of Munich, Professorship Cyber-Physical Systems
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

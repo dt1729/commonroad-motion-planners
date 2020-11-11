@@ -1,0 +1,619 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Overview &mdash; CommonRoad-Collision-Checker 2019.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Visualization Manual" href="visualization.html" />
+    <link rel="prev" title="CommonRoad-Collision-Checker" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> CommonRoad-Collision-Checker
+          
+
+          
+            
+            <img src="../_static/commonroad_white150.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2019.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="installation.html">CommonRoad-Collision-Checker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#system-requirements">System Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#dependencies">Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installation-of-third-party-libraries">Installation of Third Party Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#full-installation-with-anaconda">Full Installation with Anaconda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#documentation">Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#python-wrapper-pycrcc">Python Wrapper pycrcc</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#creating-basic-geometric-shapes">Creating Basic Geometric Shapes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#performing-collision-checks-between-basic-shapes">Performing Collision Checks Between Basic Shapes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-groups-of-shapes">Creating Groups of Shapes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#time-variant-obstacles">Time-variant Obstacles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-a-collision-checker">Creating a Collision Checker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#intersection-between-segments-and-obstacles">Intersection Between Segments and Obstacles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#commonroad-io-interface">commonroad-io Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#converting-commonroad-objects-to-collision-objects">Converting CommonRoad Objects to Collision Objects</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-a-collision-checker-from-the-scenario">Creating a Collision Checker from the Scenario</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#minkowski-sum">Minkowski Sum</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="visualization.html">Visualization Manual</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="visualization.html#importing-draw-object">Importing <code class="docutils literal notranslate"><span class="pre">draw_object</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization.html#additional-draw-params">Additional <code class="docutils literal notranslate"><span class="pre">draw_params</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization.html#drawing-shapes">Drawing shapes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">CommonRoad-Collision-Checker Python API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/python_wrapper.html">Python Wrapper pycrcc</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/python_wrapper.html#point-class"><code class="docutils literal notranslate"><span class="pre">Point</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/python_wrapper.html#rectaabb-class"><code class="docutils literal notranslate"><span class="pre">RectAABB</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/python_wrapper.html#rectobb-class"><code class="docutils literal notranslate"><span class="pre">RectOBB</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/python_wrapper.html#triangle-class"><code class="docutils literal notranslate"><span class="pre">Triangle</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/python_wrapper.html#circle-class"><code class="docutils literal notranslate"><span class="pre">Circle</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/python_wrapper.html#polygon-class"><code class="docutils literal notranslate"><span class="pre">Polygon</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/python_wrapper.html#timevariantcollisionobject-class"><code class="docutils literal notranslate"><span class="pre">TimeVariantCollisionObject</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/python_wrapper.html#shapegroup-class"><code class="docutils literal notranslate"><span class="pre">ShapeGroup</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/python_wrapper.html#collisionchecker-class"><code class="docutils literal notranslate"><span class="pre">CollisionChecker</span></code> class</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/commonroad_io.html">commonroad-io Interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/commonroad_io.html#module-commonroad_cc.collision_detection.pycrcc_collision_dispatch">collision_detection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/commonroad_io.html#module-commonroad_cc.visualization.draw_dispatch">draw_dispatch</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CommonRoad-Collision-Checker</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">User Manual</a> &raquo;</li>
+        
+      <li>Overview</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/user/overview.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="overview">
+<span id="id1"></span><h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<p>The following code examples are available as Jupyter Notebooks in tutorials/collision_checker.ipynb and tutorials/commonroad_io_interface.ipynb.</p>
+<div class="section" id="python-wrapper-pycrcc">
+<h2>Python Wrapper pycrcc<a class="headerlink" href="#python-wrapper-pycrcc" title="Permalink to this headline">¶</a></h2>
+<p>The collision checker provides you the functionality to check if basic geometric shapes and groups of shapes collide. Currently several basic shapes are available: axis-aligned rectangles (pycrcc.RectAABB), oriented rectangles (pycrcc.RectOBB), triangles (pycrcc.Triangle), circles (pycrcc.Circle), and polygons (pycrcc.Polygon). The most basic intersection test can be performed between these primitive shapes.</p>
+<div class="section" id="creating-basic-geometric-shapes">
+<h3>Creating Basic Geometric Shapes<a class="headerlink" href="#creating-basic-geometric-shapes" title="Permalink to this headline">¶</a></h3>
+<p>We start with creating a set of basic shapes. We therefore need to import the Python wrapper ‘pycrcc’.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pycrcc</span>
+<span class="kn">from</span> <span class="nn">commonroad_cc.visualization.draw_dispatch</span> <span class="kn">import</span> <span class="n">draw_object</span>
+
+<span class="c1"># Axis-aligned rectangle with width/2, height/2, x-position , y-position</span>
+<span class="n">aabb</span> <span class="o">=</span> <span class="n">pycrcc</span><span class="o">.</span><span class="n">RectAABB</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span>
+
+<span class="c1"># Oriented rectangle with width/2, height/2, orientation, x-position , y-position</span>
+<span class="n">obb</span> <span class="o">=</span> <span class="n">pycrcc</span><span class="o">.</span><span class="n">RectOBB</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">)</span>
+
+<span class="c1"># Circle with radius, x-position , y-position</span>
+<span class="n">circ</span> <span class="o">=</span> <span class="n">pycrcc</span><span class="o">.</span><span class="n">Circle</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">)</span>
+
+<span class="c1"># Triangle with vertices (x1, y1), (x2, y2), and (x3, y3)</span>
+<span class="n">tri</span> <span class="o">=</span> <span class="n">pycrcc</span><span class="o">.</span><span class="n">Triangle</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">draw_object</span><span class="p">(</span><span class="n">aabb</span><span class="p">,</span> <span class="n">draw_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;collision&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;green&#39;</span><span class="p">}})</span>
+<span class="n">draw_object</span><span class="p">(</span><span class="n">obb</span><span class="p">,</span> <span class="n">draw_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;collision&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">}})</span>
+<span class="n">draw_object</span><span class="p">(</span><span class="n">circ</span><span class="p">,</span> <span class="n">draw_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;collision&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;yellow&#39;</span><span class="p">}})</span>
+<span class="n">draw_object</span><span class="p">(</span><span class="n">tri</span><span class="p">,</span> <span class="n">draw_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;collision&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">}})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">autoscale</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>In order to create a polygon, we need to define several components: the vertices of the outer boundary, the vertices of holes, and a triangle mesh which is used for collision checks. We can therefore use Python <a class="reference external" href="https://pypi.org/project/triangle/">Triangle</a>, which is a python wrapper around Jonathan Richard Shewchuk’s Triangle library.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">triangle</span>
+
+<span class="c1"># define the vertices of the outer boundary, we assume that we have no holes</span>
+<span class="n">vertices</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">]]</span>
+<span class="c1"># triangulate the polygon</span>
+<span class="n">number_of_vertices</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">vertices</span><span class="p">)</span>
+<span class="n">segments</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">number_of_vertices</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">number_of_vertices</span><span class="p">)))</span>
+<span class="n">segments</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">number_of_vertices</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">triangles</span> <span class="o">=</span> <span class="n">triangle</span><span class="o">.</span><span class="n">triangulate</span><span class="p">({</span><span class="s1">&#39;vertices&#39;</span><span class="p">:</span> <span class="n">vertices</span><span class="p">,</span> <span class="s1">&#39;segments&#39;</span><span class="p">:</span> <span class="n">segments</span><span class="p">},</span> <span class="n">opts</span><span class="o">=</span><span class="s1">&#39;pqS2.4&#39;</span><span class="p">)</span>
+<span class="c1"># convert all triangles to pycrcc.Triangle</span>
+<span class="n">mesh</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">triangles</span><span class="p">[</span><span class="s1">&#39;triangles&#39;</span><span class="p">]:</span>
+    <span class="n">v0</span> <span class="o">=</span> <span class="n">triangles</span><span class="p">[</span><span class="s1">&#39;vertices&#39;</span><span class="p">][</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+    <span class="n">v1</span> <span class="o">=</span> <span class="n">triangles</span><span class="p">[</span><span class="s1">&#39;vertices&#39;</span><span class="p">][</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+    <span class="n">v2</span> <span class="o">=</span> <span class="n">triangles</span><span class="p">[</span><span class="s1">&#39;vertices&#39;</span><span class="p">][</span><span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span>
+    <span class="n">mesh</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pycrcc</span><span class="o">.</span><span class="n">Triangle</span><span class="p">(</span><span class="n">v0</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">v0</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                                <span class="n">v1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">v1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                                <span class="n">v2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">v2</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="c1"># create the polygon with the vertices of the outer boundary, the holes, and the triangle mesh</span>
+<span class="n">polygon</span> <span class="o">=</span> <span class="n">pycrcc</span><span class="o">.</span><span class="n">Polygon</span><span class="p">(</span><span class="n">vertices</span><span class="p">,</span> <span class="nb">list</span><span class="p">(),</span> <span class="n">mesh</span><span class="p">)</span>
+
+<span class="c1"># draw the polygon and its triangle mesh</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">211</span><span class="p">)</span>
+<span class="n">draw_object</span><span class="p">(</span><span class="n">aabb</span><span class="p">,</span> <span class="n">draw_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;collision&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;green&#39;</span><span class="p">}})</span>
+<span class="n">draw_object</span><span class="p">(</span><span class="n">obb</span><span class="p">,</span> <span class="n">draw_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;collision&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">}})</span>
+<span class="n">draw_object</span><span class="p">(</span><span class="n">circ</span><span class="p">,</span> <span class="n">draw_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;collision&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;yellow&#39;</span><span class="p">}})</span>
+<span class="n">draw_object</span><span class="p">(</span><span class="n">tri</span><span class="p">,</span> <span class="n">draw_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;collision&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">}})</span>
+<span class="n">draw_object</span><span class="p">(</span><span class="n">polygon</span><span class="p">,</span> <span class="n">draw_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;collision&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;orange&#39;</span><span class="p">}})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">autoscale</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">212</span><span class="p">)</span>
+<span class="n">draw_object</span><span class="p">(</span><span class="n">aabb</span><span class="p">,</span> <span class="n">draw_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;collision&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;green&#39;</span><span class="p">}})</span>
+<span class="n">draw_object</span><span class="p">(</span><span class="n">obb</span><span class="p">,</span> <span class="n">draw_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;collision&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">}})</span>
+<span class="n">draw_object</span><span class="p">(</span><span class="n">circ</span><span class="p">,</span> <span class="n">draw_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;collision&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;yellow&#39;</span><span class="p">}})</span>
+<span class="n">draw_object</span><span class="p">(</span><span class="n">tri</span><span class="p">,</span> <span class="n">draw_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;collision&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">}})</span>
+<span class="n">draw_object</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">draw_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;collision&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;orange&#39;</span><span class="p">}})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">autoscale</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="performing-collision-checks-between-basic-shapes">
+<h3>Performing Collision Checks Between Basic Shapes<a class="headerlink" href="#performing-collision-checks-between-basic-shapes" title="Permalink to this headline">¶</a></h3>
+<p>Collision queries can be conducted using the function ‘collide’:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s1">&#39;Collision between OBB and AABB: &#39;</span><span class="p">,</span> <span class="n">obb</span><span class="o">.</span><span class="n">collide</span><span class="p">(</span><span class="n">aabb</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Collision between AABB and Circle: &#39;</span><span class="p">,</span> <span class="n">aabb</span><span class="o">.</span><span class="n">collide</span><span class="p">(</span><span class="n">circ</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Collision between Circle and OBB:  &#39;</span><span class="p">,</span> <span class="n">circ</span><span class="o">.</span><span class="n">collide</span><span class="p">(</span><span class="n">obb</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Collision between Triangle and AABB:  &#39;</span><span class="p">,</span> <span class="n">tri</span><span class="o">.</span><span class="n">collide</span><span class="p">(</span><span class="n">aabb</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Collision between Polygon and Triangle: &#39;</span><span class="p">,</span> <span class="n">polygon</span><span class="o">.</span><span class="n">collide</span><span class="p">(</span><span class="n">tri</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Collision between Polygon and Circle: &#39;</span><span class="p">,</span> <span class="n">polygon</span><span class="o">.</span><span class="n">collide</span><span class="p">(</span><span class="n">circ</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-groups-of-shapes">
+<h3>Creating Groups of Shapes<a class="headerlink" href="#creating-groups-of-shapes" title="Permalink to this headline">¶</a></h3>
+<p>Several basic shapes can be grouped into one collision object using the class ShapeGroup. Collision checks can be performed similiar to basic shapes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># create two shape groups</span>
+<span class="n">sg_1</span> <span class="o">=</span> <span class="n">pycrcc</span><span class="o">.</span><span class="n">ShapeGroup</span><span class="p">()</span>
+<span class="n">sg_1</span><span class="o">.</span><span class="n">add_shape</span><span class="p">(</span><span class="n">obb</span><span class="p">)</span>
+<span class="n">sg_1</span><span class="o">.</span><span class="n">add_shape</span><span class="p">(</span><span class="n">aabb</span><span class="p">)</span>
+
+<span class="n">sg_2</span> <span class="o">=</span> <span class="n">pycrcc</span><span class="o">.</span><span class="n">ShapeGroup</span><span class="p">()</span>
+<span class="n">sg_2</span><span class="o">.</span><span class="n">add_shape</span><span class="p">(</span><span class="n">circ</span><span class="p">)</span>
+<span class="n">sg_2</span><span class="o">.</span><span class="n">add_shape</span><span class="p">(</span><span class="n">tri</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Collision between Circle and Shapegroup 1: &#39;</span><span class="p">,</span> <span class="n">circ</span><span class="o">.</span><span class="n">collide</span><span class="p">(</span><span class="n">sg_1</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Collision between Shapegroup 1 and Shapegroup 2: &#39;</span><span class="p">,</span> <span class="n">sg_1</span><span class="o">.</span><span class="n">collide</span><span class="p">(</span><span class="n">sg_2</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">draw_object</span><span class="p">(</span><span class="n">sg_1</span><span class="p">,</span> <span class="n">draw_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;collision&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;green&#39;</span><span class="p">}})</span>
+<span class="n">draw_object</span><span class="p">(</span><span class="n">sg_2</span><span class="p">,</span> <span class="n">draw_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;collision&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">}})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">autoscale</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="time-variant-obstacles">
+<h3>Time-variant Obstacles<a class="headerlink" href="#time-variant-obstacles" title="Permalink to this headline">¶</a></h3>
+<p>So far, we have only considered static objects. We can also create time-varying obstacles. Note that the collision checks are only performed at discrete points in time k.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a new time-variant collision objects which starts at time step 1</span>
+<span class="n">tvo_1</span> <span class="o">=</span> <span class="n">pycrcc</span><span class="o">.</span><span class="n">TimeVariantCollisionObject</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># we need to add the shape of the object for each time step</span>
+<span class="n">tvo_1</span><span class="o">.</span><span class="n">append_obstacle</span><span class="p">(</span><span class="n">pycrcc</span><span class="o">.</span><span class="n">RectOBB</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> <span class="c1"># time step 1</span>
+<span class="n">tvo_1</span><span class="o">.</span><span class="n">append_obstacle</span><span class="p">(</span><span class="n">pycrcc</span><span class="o">.</span><span class="n">RectOBB</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> <span class="c1"># time step 2</span>
+<span class="n">tvo_1</span><span class="o">.</span><span class="n">append_obstacle</span><span class="p">(</span><span class="n">pycrcc</span><span class="o">.</span><span class="n">RectOBB</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>   <span class="c1"># time step 3</span>
+<span class="n">tvo_1</span><span class="o">.</span><span class="n">append_obstacle</span><span class="p">(</span><span class="n">pycrcc</span><span class="o">.</span><span class="n">RectOBB</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> <span class="c1"># time step 4</span>
+<span class="n">tvo_1</span><span class="o">.</span><span class="n">append_obstacle</span><span class="p">(</span><span class="n">pycrcc</span><span class="o">.</span><span class="n">RectOBB</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>   <span class="c1"># time step 5</span>
+<span class="n">tvo_1</span><span class="o">.</span><span class="n">append_obstacle</span><span class="p">(</span><span class="n">pycrcc</span><span class="o">.</span><span class="n">RectOBB</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> <span class="c1"># time step 6</span>
+<span class="n">tvo_1</span><span class="o">.</span><span class="n">append_obstacle</span><span class="p">(</span><span class="n">pycrcc</span><span class="o">.</span><span class="n">RectOBB</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>   <span class="c1"># time step 7</span>
+<span class="n">tvo_1</span><span class="o">.</span><span class="n">append_obstacle</span><span class="p">(</span><span class="n">pycrcc</span><span class="o">.</span><span class="n">RectOBB</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> <span class="c1"># time step 8</span>
+
+<span class="c1"># create a second time-variant collision objects which starts at time step 4</span>
+<span class="n">tvo_2</span> <span class="o">=</span> <span class="n">pycrcc</span><span class="o">.</span><span class="n">TimeVariantCollisionObject</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">tvo_2</span><span class="o">.</span><span class="n">append_obstacle</span><span class="p">(</span><span class="n">pycrcc</span><span class="o">.</span><span class="n">RectOBB</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="c1"># time step 4</span>
+<span class="n">tvo_2</span><span class="o">.</span><span class="n">append_obstacle</span><span class="p">(</span><span class="n">pycrcc</span><span class="o">.</span><span class="n">RectOBB</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="c1"># time step 5</span>
+<span class="n">tvo_2</span><span class="o">.</span><span class="n">append_obstacle</span><span class="p">(</span><span class="n">pycrcc</span><span class="o">.</span><span class="n">RectOBB</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="c1"># time step 6</span>
+<span class="n">tvo_2</span><span class="o">.</span><span class="n">append_obstacle</span><span class="p">(</span><span class="n">pycrcc</span><span class="o">.</span><span class="n">RectOBB</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span> <span class="c1"># time step 7</span>
+<span class="n">tvo_2</span><span class="o">.</span><span class="n">append_obstacle</span><span class="p">(</span><span class="n">pycrcc</span><span class="o">.</span><span class="n">RectOBB</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> <span class="c1"># time step 8</span>
+<span class="n">tvo_2</span><span class="o">.</span><span class="n">append_obstacle</span><span class="p">(</span><span class="n">pycrcc</span><span class="o">.</span><span class="n">RectOBB</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span> <span class="c1"># time step 9</span>
+<span class="n">tvo_2</span><span class="o">.</span><span class="n">append_obstacle</span><span class="p">(</span><span class="n">pycrcc</span><span class="o">.</span><span class="n">RectOBB</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span> <span class="c1"># time step 10</span>
+
+<span class="c1"># Check if both objects collide</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Collision between time-varying obstacle tvo_1 and tvo_2: &#39;</span><span class="p">,</span> <span class="n">tvo_1</span><span class="o">.</span><span class="n">collide</span><span class="p">(</span><span class="n">tvo_2</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">draw_object</span><span class="p">(</span><span class="n">tvo_1</span><span class="p">,</span> <span class="n">draw_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;collision&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">}})</span>
+<span class="n">draw_object</span><span class="p">(</span><span class="n">tvo_2</span><span class="p">,</span> <span class="n">draw_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;collision&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;green&#39;</span><span class="p">}})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">autoscale</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-a-collision-checker">
+<h3>Creating a Collision Checker<a class="headerlink" href="#creating-a-collision-checker" title="Permalink to this headline">¶</a></h3>
+<p>Several planning algorithms test a large number of candidate trajectories for collisions. These checks must be executed between each trajectory and all obstacles in the environment. The pycrcc.CollisionChecker provides the functionality to manage the set of all obstacles in the environment. After all obstacles are added to pycrcc.CollisionChecker, a collision check query for a trajectory can be called:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a new collision checker</span>
+<span class="n">cc</span> <span class="o">=</span> <span class="n">pycrcc</span><span class="o">.</span><span class="n">CollisionChecker</span><span class="p">()</span>
+<span class="c1"># add all obstacles in the environment</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">add_collision_object</span><span class="p">(</span><span class="n">tvo_1</span><span class="p">)</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">add_collision_object</span><span class="p">(</span><span class="n">sg_1</span><span class="p">)</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">add_collision_object</span><span class="p">(</span><span class="n">pycrcc</span><span class="o">.</span><span class="n">RectOBB</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Collision with trajectory tvo_2: &#39;</span><span class="p">,</span> <span class="n">cc</span><span class="o">.</span><span class="n">collide</span><span class="p">(</span><span class="n">tvo_2</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">draw_object</span><span class="p">(</span><span class="n">cc</span><span class="p">,</span> <span class="n">draw_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;collision&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">}})</span>
+<span class="n">draw_object</span><span class="p">(</span><span class="n">tvo_2</span><span class="p">,</span> <span class="n">draw_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;collision&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;green&#39;</span><span class="p">}})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">autoscale</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Sometimes, it might be necessary to get all obstacles within the collision checker at a specific point in time. This can be done with the function ‘time_slice’:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot all obstacles at time step 4</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">draw_object</span><span class="p">(</span><span class="n">cc</span><span class="o">.</span><span class="n">time_slice</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">draw_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;collision&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">}})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">autoscale</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="intersection-between-segments-and-obstacles">
+<h3>Intersection Between Segments and Obstacles<a class="headerlink" href="#intersection-between-segments-and-obstacles" title="Permalink to this headline">¶</a></h3>
+<p>We can also create a segment and test it for intersections with objects in the environment.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Axis-aligned rectangle with width/2, height/2, x-position , y-position</span>
+<span class="n">aabb_2</span> <span class="o">=</span> <span class="n">pycrcc</span><span class="o">.</span><span class="n">RectAABB</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="c1"># create collision checker and add obstacles</span>
+<span class="n">cc</span> <span class="o">=</span> <span class="n">pycrcc</span><span class="o">.</span><span class="n">CollisionChecker</span><span class="p">()</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">add_collision_object</span><span class="p">(</span><span class="n">obb</span><span class="p">)</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">add_collision_object</span><span class="p">(</span><span class="n">aabb</span><span class="p">)</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">add_collision_object</span><span class="p">(</span><span class="n">aabb_2</span><span class="p">)</span>
+<span class="n">cc</span><span class="o">.</span><span class="n">add_collision_object</span><span class="p">(</span><span class="n">circ</span><span class="p">)</span>
+
+<span class="c1"># segment with start and end point</span>
+<span class="n">start</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">end</span> <span class="o">=</span> <span class="p">[</span><span class="mf">9.5</span><span class="p">,</span> <span class="mf">9.5</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Raytrace, with join&quot;</span><span class="p">)</span>
+<span class="n">intervals</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">raytrace</span><span class="p">(</span><span class="n">start</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">start</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">end</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">end</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="bp">True</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">intervals</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Raytrace, no join&quot;</span><span class="p">)</span>
+<span class="n">intervals</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">raytrace</span><span class="p">(</span><span class="n">start</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">start</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">end</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">end</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="bp">False</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">intervals</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">draw_object</span><span class="p">(</span><span class="n">cc</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
+
+<span class="c1"># plot start and end point of segment</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="n">start</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">end</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="p">(</span><span class="n">start</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">end</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="s1">&#39;*g&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="c1"># plot all intersecting intervals of the segment</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">intervals</span><span class="p">:</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">i</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">i</span><span class="p">[</span><span class="mi">3</span><span class="p">]),</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="commonroad-io-interface">
+<h2>commonroad-io Interface<a class="headerlink" href="#commonroad-io-interface" title="Permalink to this headline">¶</a></h2>
+<p>The collision checker library provides a convenient interface to <a class="reference external" href="https://pypi.org/project/commonroad-io/">commonroad-io</a>. In order to illustrate the functionality, we load a CommonRoad scenario.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">commonroad.common.file_reader</span> <span class="kn">import</span> <span class="n">CommonRoadFileReader</span>
+<span class="kn">from</span> <span class="nn">commonroad_cc.visualization.draw_dispatch</span> <span class="kn">import</span> <span class="n">draw_object</span>
+
+<span class="c1"># load the exemplary CommonRoad scenario using the CommonRoad file reader</span>
+<span class="n">scenario</span><span class="p">,</span> <span class="n">planning_problem_set</span> <span class="o">=</span> <span class="n">CommonRoadFileReader</span><span class="p">(</span><span class="s1">&#39;ZAM_Tutorial-1_2_T-1.xml&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
+
+<span class="c1"># plot the scenario</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">draw_object</span><span class="p">(</span><span class="n">scenario</span><span class="p">)</span>
+<span class="n">draw_object</span><span class="p">(</span><span class="n">planning_problem_set</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">autoscale</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="section" id="converting-commonroad-objects-to-collision-objects">
+<h3>Converting CommonRoad Objects to Collision Objects<a class="headerlink" href="#converting-commonroad-objects-to-collision-objects" title="Permalink to this headline">¶</a></h3>
+<p>All shapes and obstacles can be converted to collision objects in order to perform intersection tests. Therefore, we need to call the function ‘create_collision_object()’. The supported CommonRoad objects are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>commonroad.geometry.shape.ShapeGroup</p></li>
+<li><p>commonroad.geometry.shape.Polygon</p></li>
+<li><p>commonroad.geometry.shape.Circle</p></li>
+<li><p>commonroad.geometry.shape.Rectangle</p></li>
+<li><p>commonroad.scenario.obstacle.StaticObstacle</p></li>
+<li><p>commonroad.scenario.obstacle.DynamicObstacle</p></li>
+<li><p>commonroad.prediction.prediction.SetBasedPrediction</p></li>
+<li><p>commonroad.prediction.prediction.TrajectoryPrediction</p></li>
+</ul>
+</div></blockquote>
+<p>Note that the trajectories of dynamic obstacles are not interpolated. So collisions are only considered at discrete points in time.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">commonroad_cc.collision_detection.pycrcc_collision_dispatch</span> <span class="kn">import</span> <span class="n">create_collision_object</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+
+<span class="n">draw_object</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">lanelet_network</span><span class="p">)</span>
+
+<span class="c1"># convert each static obstacle in the scenario to a collision object and plot it</span>
+<span class="k">for</span> <span class="n">obs</span> <span class="ow">in</span> <span class="n">scenario</span><span class="o">.</span><span class="n">static_obstacles</span><span class="p">:</span>
+    <span class="n">draw_object</span><span class="p">(</span><span class="n">create_collision_object</span><span class="p">(</span><span class="n">obs</span><span class="p">),</span> <span class="n">draw_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;collision&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">}})</span>
+
+<span class="c1"># convert each dynamic obstacle in the scenario to a collision object and plot it</span>
+<span class="k">for</span> <span class="n">obs</span> <span class="ow">in</span> <span class="n">scenario</span><span class="o">.</span><span class="n">dynamic_obstacles</span><span class="p">:</span>
+    <span class="n">draw_object</span><span class="p">(</span><span class="n">create_collision_object</span><span class="p">(</span><span class="n">obs</span><span class="p">),</span> <span class="n">draw_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;collision&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">}})</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">autoscale</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-a-collision-checker-from-the-scenario">
+<h3>Creating a Collision Checker from the Scenario<a class="headerlink" href="#creating-a-collision-checker-from-the-scenario" title="Permalink to this headline">¶</a></h3>
+<p>A pycrcc.CollisionChecker object can be directly generated from a CommonRoad scenario:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">commonroad_cc.collision_detection.pycrcc_collision_dispatch</span> <span class="kn">import</span> <span class="n">create_collision_checker</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">create_collision_checker</span><span class="p">(</span><span class="n">scenario</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">draw_object</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">lanelet_network</span><span class="p">)</span>
+<span class="n">draw_object</span><span class="p">(</span><span class="n">cc</span><span class="p">,</span> <span class="n">draw_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;collision&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">}})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">autoscale</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Given the collision checker for the scenario, it can be easily checked if a trajectory of a ego vehicle collides with an object in the environment.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">commonroad.scenario.trajectory</span> <span class="kn">import</span> <span class="n">State</span><span class="p">,</span> <span class="n">Trajectory</span>
+<span class="kn">from</span> <span class="nn">commonroad.prediction.prediction</span> <span class="kn">import</span> <span class="n">TrajectoryPrediction</span>
+<span class="kn">from</span> <span class="nn">commonroad.geometry.shape</span> <span class="kn">import</span> <span class="n">Rectangle</span>
+
+<span class="c1"># create a trajectory for the ego vehicle starting at time step 0</span>
+<span class="n">position</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">6.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">8.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">10.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">12.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">14.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]])</span>
+<span class="n">state_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">position</span><span class="p">)):</span>
+    <span class="n">state_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">State</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;position&#39;</span><span class="p">:</span> <span class="n">position</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="s1">&#39;orientation&#39;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">}))</span>
+<span class="n">trajectory</span> <span class="o">=</span> <span class="n">Trajectory</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">state_list</span><span class="p">)</span>
+
+<span class="c1"># create the shape of the ego vehicle</span>
+<span class="n">shape</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mf">4.5</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="c1"># create a TrajectoryPrediction object consisting of the trajectory and the shape of the ego vehicle</span>
+<span class="n">traj_pred</span> <span class="o">=</span> <span class="n">TrajectoryPrediction</span><span class="p">(</span><span class="n">trajectory</span><span class="o">=</span><span class="n">trajectory</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1"># create a collision object using the trajectory prediction of the ego vehicle</span>
+<span class="n">co</span> <span class="o">=</span> <span class="n">create_collision_object</span><span class="p">(</span><span class="n">traj_pred</span><span class="p">)</span>
+
+<span class="c1"># test the trajectory of the ego vehicle for collisions</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Collision between the trajectory of the ego vehicle and objects in the environment: &#39;</span><span class="p">,</span> <span class="n">cc</span><span class="o">.</span><span class="n">collide</span><span class="p">(</span><span class="n">co</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">draw_object</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">lanelet_network</span><span class="p">)</span>
+<span class="n">draw_object</span><span class="p">(</span><span class="n">cc</span><span class="p">,</span> <span class="n">draw_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;collision&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">}})</span>
+<span class="n">draw_object</span><span class="p">(</span><span class="n">co</span><span class="p">,</span> <span class="n">draw_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;collision&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;green&#39;</span><span class="p">}})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">autoscale</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="minkowski-sum">
+<h3>Minkowski Sum<a class="headerlink" href="#minkowski-sum" title="Permalink to this headline">¶</a></h3>
+<p>The <em>commonroad-io</em> interface offers the possibility to compute the minkowski sum with a circle and an arbitrary <em>commonroad-io</em> shape before adding the shape to the collision checker.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">commonroad_cc.collision_detection.pycrcc_collision_dispatch</span> <span class="kn">import</span> <span class="n">create_collision_checker</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">create_collision_checker</span><span class="p">(</span><span class="n">scenario</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;minkowski_sum_circle&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+                                                <span class="s1">&#39;minkowski_sum_circle_radius&#39;</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">,</span>
+                                                <span class="s1">&#39;resolution&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">draw_object</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">lanelet_network</span><span class="p">)</span>
+<span class="n">draw_object</span><span class="p">(</span><span class="n">cc</span><span class="p">,</span> <span class="n">draw_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;collision&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">}})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">autoscale</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="visualization.html" class="btn btn-neutral float-right" title="Visualization Manual" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="installation.html" class="btn btn-neutral float-left" title="CommonRoad-Collision-Checker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Technical University of Munich, Professorship Cyber-Physical Systems
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

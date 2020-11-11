@@ -1,0 +1,642 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Python Wrapper pycrcc &mdash; CommonRoad-Collision-Checker 2019.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="commonroad-io Interface" href="commonroad_io.html" />
+    <link rel="prev" title="CommonRoad-Collision-Checker Python API" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> CommonRoad-Collision-Checker
+          
+
+          
+            
+            <img src="../_static/commonroad_white150.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2019.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../user/index.html">User Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../user/installation.html">CommonRoad-Collision-Checker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user/installation.html#system-requirements">System Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user/installation.html#dependencies">Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../user/installation.html#installation-of-third-party-libraries">Installation of Third Party Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user/installation.html#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user/installation.html#full-installation-with-anaconda">Full Installation with Anaconda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user/installation.html#documentation">Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../user/overview.html">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user/overview.html#python-wrapper-pycrcc">Python Wrapper pycrcc</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../user/overview.html#creating-basic-geometric-shapes">Creating Basic Geometric Shapes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../user/overview.html#performing-collision-checks-between-basic-shapes">Performing Collision Checks Between Basic Shapes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../user/overview.html#creating-groups-of-shapes">Creating Groups of Shapes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../user/overview.html#time-variant-obstacles">Time-variant Obstacles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../user/overview.html#creating-a-collision-checker">Creating a Collision Checker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../user/overview.html#intersection-between-segments-and-obstacles">Intersection Between Segments and Obstacles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../user/overview.html#commonroad-io-interface">commonroad-io Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../user/overview.html#converting-commonroad-objects-to-collision-objects">Converting CommonRoad Objects to Collision Objects</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../user/overview.html#creating-a-collision-checker-from-the-scenario">Creating a Collision Checker from the Scenario</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../user/overview.html#minkowski-sum">Minkowski Sum</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../user/visualization.html">Visualization Manual</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user/visualization.html#importing-draw-object">Importing <code class="docutils literal notranslate"><span class="pre">draw_object</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user/visualization.html#additional-draw-params">Additional <code class="docutils literal notranslate"><span class="pre">draw_params</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user/visualization.html#drawing-shapes">Drawing shapes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">CommonRoad-Collision-Checker Python API</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Python Wrapper pycrcc</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#point-class"><code class="docutils literal notranslate"><span class="pre">Point</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rectaabb-class"><code class="docutils literal notranslate"><span class="pre">RectAABB</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rectobb-class"><code class="docutils literal notranslate"><span class="pre">RectOBB</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#triangle-class"><code class="docutils literal notranslate"><span class="pre">Triangle</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#circle-class"><code class="docutils literal notranslate"><span class="pre">Circle</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#polygon-class"><code class="docutils literal notranslate"><span class="pre">Polygon</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#timevariantcollisionobject-class"><code class="docutils literal notranslate"><span class="pre">TimeVariantCollisionObject</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shapegroup-class"><code class="docutils literal notranslate"><span class="pre">ShapeGroup</span></code> class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collisionchecker-class"><code class="docutils literal notranslate"><span class="pre">CollisionChecker</span></code> class</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="commonroad_io.html">commonroad-io Interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="commonroad_io.html#module-commonroad_cc.collision_detection.pycrcc_collision_dispatch">collision_detection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="commonroad_io.html#module-commonroad_cc.visualization.draw_dispatch">draw_dispatch</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CommonRoad-Collision-Checker</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">CommonRoad-Collision-Checker Python API</a> &raquo;</li>
+        
+      <li>Python Wrapper pycrcc</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/python_wrapper.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pycrcc">
+<span id="python-wrapper-pycrcc"></span><h1>Python Wrapper pycrcc<a class="headerlink" href="#module-pycrcc" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="point-class">
+<h2><code class="docutils literal notranslate"><span class="pre">Point</span></code> class<a class="headerlink" href="#point-class" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pycrcc.Point">
+<em class="property">class </em><code class="descclassname">pycrcc.</code><code class="descname">Point</code><a class="headerlink" href="#pycrcc.Point" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="pycrcc.Point.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>self: pycrcc.Point</em>, <em>x: float</em>, <em>y: float</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#pycrcc.Point.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.Point.center">
+<code class="descname">center</code><span class="sig-paren">(</span><em>self: pycrcc.Point</em><span class="sig-paren">)</span> &#x2192; array<a class="headerlink" href="#pycrcc.Point.center" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.Point.collide">
+<code class="descname">collide</code><span class="sig-paren">(</span><em>self: pycrcc.Point</em>, <em>arg0: pycrcc.CollisionObject</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#pycrcc.Point.collide" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="rectaabb-class">
+<h2><code class="docutils literal notranslate"><span class="pre">RectAABB</span></code> class<a class="headerlink" href="#rectaabb-class" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pycrcc.RectAABB">
+<em class="property">class </em><code class="descclassname">pycrcc.</code><code class="descname">RectAABB</code><a class="headerlink" href="#pycrcc.RectAABB" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="pycrcc.RectAABB.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>self: pycrcc.RectAABB</em>, <em>width/2: float</em>, <em>height/2: float</em>, <em>center x: float</em>, <em>center y: float</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#pycrcc.RectAABB.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.RectAABB.__str__">
+<code class="descname">__str__</code><span class="sig-paren">(</span><em>self: pycrcc.RectAABB</em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#pycrcc.RectAABB.__str__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.RectAABB.collide">
+<code class="descname">collide</code><span class="sig-paren">(</span><em>self: pycrcc.RectAABB</em>, <em>arg0: pycrcc.CollisionObject</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#pycrcc.RectAABB.collide" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.RectAABB.max_x">
+<code class="descname">max_x</code><span class="sig-paren">(</span><em>self: pycrcc.RectAABB</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#pycrcc.RectAABB.max_x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.RectAABB.max_y">
+<code class="descname">max_y</code><span class="sig-paren">(</span><em>self: pycrcc.RectAABB</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#pycrcc.RectAABB.max_y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.RectAABB.min_x">
+<code class="descname">min_x</code><span class="sig-paren">(</span><em>self: pycrcc.RectAABB</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#pycrcc.RectAABB.min_x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.RectAABB.min_y">
+<code class="descname">min_y</code><span class="sig-paren">(</span><em>self: pycrcc.RectAABB</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#pycrcc.RectAABB.min_y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.RectAABB.set_all">
+<code class="descname">set_all</code><span class="sig-paren">(</span><em>self: pycrcc.RectAABB</em>, <em>arg0: float</em>, <em>arg1: float</em>, <em>arg2: float</em>, <em>arg3: float</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#pycrcc.RectAABB.set_all" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="rectobb-class">
+<h2><code class="docutils literal notranslate"><span class="pre">RectOBB</span></code> class<a class="headerlink" href="#rectobb-class" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pycrcc.RectOBB">
+<em class="property">class </em><code class="descclassname">pycrcc.</code><code class="descname">RectOBB</code><a class="headerlink" href="#pycrcc.RectOBB" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="pycrcc.RectOBB.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>self: pycrcc.RectOBB</em>, <em>width/2: float</em>, <em>height/2: float</em>, <em>orientation: float</em>, <em>center x: float</em>, <em>center y: float</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#pycrcc.RectOBB.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.RectOBB.__str__">
+<code class="descname">__str__</code><span class="sig-paren">(</span><em>self: pycrcc.RectOBB</em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#pycrcc.RectOBB.__str__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.RectOBB.center">
+<code class="descname">center</code><span class="sig-paren">(</span><em>self: pycrcc.RectOBB</em><span class="sig-paren">)</span> &#x2192; array<a class="headerlink" href="#pycrcc.RectOBB.center" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.RectOBB.collide">
+<code class="descname">collide</code><span class="sig-paren">(</span><em>self: pycrcc.RectOBB</em>, <em>arg0: pycrcc.CollisionObject</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#pycrcc.RectOBB.collide" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.RectOBB.local_x_axis">
+<code class="descname">local_x_axis</code><span class="sig-paren">(</span><em>self: pycrcc.RectOBB</em><span class="sig-paren">)</span> &#x2192; array<a class="headerlink" href="#pycrcc.RectOBB.local_x_axis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.RectOBB.local_y_axis">
+<code class="descname">local_y_axis</code><span class="sig-paren">(</span><em>self: pycrcc.RectOBB</em><span class="sig-paren">)</span> &#x2192; array<a class="headerlink" href="#pycrcc.RectOBB.local_y_axis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.RectOBB.r_x">
+<code class="descname">r_x</code><span class="sig-paren">(</span><em>self: pycrcc.RectOBB</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#pycrcc.RectOBB.r_x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Positive halfwidth extent of OBB along local x-axis</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.RectOBB.r_y">
+<code class="descname">r_y</code><span class="sig-paren">(</span><em>self: pycrcc.RectOBB</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#pycrcc.RectOBB.r_y" title="Permalink to this definition">¶</a></dt>
+<dd><p>Positive halfwidth extent of OBB along local y-axis</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.RectOBB.set_center">
+<code class="descname">set_center</code><span class="sig-paren">(</span><em>self: pycrcc.RectOBB</em>, <em>arg0: float</em>, <em>arg1: float</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#pycrcc.RectOBB.set_center" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="triangle-class">
+<h2><code class="docutils literal notranslate"><span class="pre">Triangle</span></code> class<a class="headerlink" href="#triangle-class" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pycrcc.Triangle">
+<em class="property">class </em><code class="descclassname">pycrcc.</code><code class="descname">Triangle</code><a class="headerlink" href="#pycrcc.Triangle" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="pycrcc.Triangle.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>self: pycrcc.Triangle</em>, <em>x1: float</em>, <em>y1: float</em>, <em>x2: float</em>, <em>y2: float</em>, <em>x3: float</em>, <em>y3: float</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#pycrcc.Triangle.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.Triangle.__str__">
+<code class="descname">__str__</code><span class="sig-paren">(</span><em>self: pycrcc.Triangle</em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#pycrcc.Triangle.__str__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.Triangle.collide">
+<code class="descname">collide</code><span class="sig-paren">(</span><em>self: pycrcc.Triangle</em>, <em>arg0: pycrcc.CollisionObject</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#pycrcc.Triangle.collide" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.Triangle.vertices">
+<code class="descname">vertices</code><span class="sig-paren">(</span><em>self: pycrcc.Triangle</em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#pycrcc.Triangle.vertices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="circle-class">
+<h2><code class="docutils literal notranslate"><span class="pre">Circle</span></code> class<a class="headerlink" href="#circle-class" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pycrcc.Circle">
+<em class="property">class </em><code class="descclassname">pycrcc.</code><code class="descname">Circle</code><a class="headerlink" href="#pycrcc.Circle" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="pycrcc.Circle.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>self: pycrcc.Circle</em>, <em>radius: float</em>, <em>center x: float</em>, <em>center y: float</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#pycrcc.Circle.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.Circle.center">
+<code class="descname">center</code><span class="sig-paren">(</span><em>self: pycrcc.Circle</em><span class="sig-paren">)</span> &#x2192; array<a class="headerlink" href="#pycrcc.Circle.center" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.Circle.collide">
+<code class="descname">collide</code><span class="sig-paren">(</span><em>self: pycrcc.Circle</em>, <em>arg0: pycrcc.CollisionObject</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#pycrcc.Circle.collide" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.Circle.r">
+<code class="descname">r</code><span class="sig-paren">(</span><em>self: pycrcc.Circle</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#pycrcc.Circle.r" title="Permalink to this definition">¶</a></dt>
+<dd><p>radius of the circle</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.Circle.x">
+<code class="descname">x</code><span class="sig-paren">(</span><em>self: pycrcc.Circle</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#pycrcc.Circle.x" title="Permalink to this definition">¶</a></dt>
+<dd><p>x-coordinate of center</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.Circle.y">
+<code class="descname">y</code><span class="sig-paren">(</span><em>self: pycrcc.Circle</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#pycrcc.Circle.y" title="Permalink to this definition">¶</a></dt>
+<dd><p>y-coordinate of center</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="polygon-class">
+<h2><code class="docutils literal notranslate"><span class="pre">Polygon</span></code> class<a class="headerlink" href="#polygon-class" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pycrcc.Polygon">
+<em class="property">class </em><code class="descclassname">pycrcc.</code><code class="descname">Polygon</code><a class="headerlink" href="#pycrcc.Polygon" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="pycrcc.Polygon.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>self: pycrcc.Polygon, outer_boundary: List[List[float[2]]], holes: list, triangle mesh: list</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#pycrcc.Polygon.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.Polygon.__str__">
+<code class="descname">__str__</code><span class="sig-paren">(</span><em>self: pycrcc.Polygon</em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#pycrcc.Polygon.__str__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.Polygon.collide">
+<code class="descname">collide</code><span class="sig-paren">(</span><em>self: pycrcc.Polygon</em>, <em>arg0: pycrcc.CollisionObject</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#pycrcc.Polygon.collide" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.Polygon.triangle_mesh">
+<code class="descname">triangle_mesh</code><span class="sig-paren">(</span><em>self: pycrcc.Polygon</em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#pycrcc.Polygon.triangle_mesh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.Polygon.vertices">
+<code class="descname">vertices</code><span class="sig-paren">(</span><em>self: pycrcc.Polygon</em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#pycrcc.Polygon.vertices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="timevariantcollisionobject-class">
+<h2><code class="docutils literal notranslate"><span class="pre">TimeVariantCollisionObject</span></code> class<a class="headerlink" href="#timevariantcollisionobject-class" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pycrcc.TimeVariantCollisionObject">
+<em class="property">class </em><code class="descclassname">pycrcc.</code><code class="descname">TimeVariantCollisionObject</code><a class="headerlink" href="#pycrcc.TimeVariantCollisionObject" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="pycrcc.TimeVariantCollisionObject.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>self: pycrcc.TimeVariantCollisionObject</em>, <em>time_start_idx: int</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#pycrcc.TimeVariantCollisionObject.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.TimeVariantCollisionObject.append_obstacle">
+<code class="descname">append_obstacle</code><span class="sig-paren">(</span><em>self: pycrcc.TimeVariantCollisionObject</em>, <em>arg0: pycrcc.CollisionObject</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#pycrcc.TimeVariantCollisionObject.append_obstacle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.TimeVariantCollisionObject.collide">
+<code class="descname">collide</code><span class="sig-paren">(</span><em>self: pycrcc.TimeVariantCollisionObject</em>, <em>arg0: pycrcc.CollisionObject</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#pycrcc.TimeVariantCollisionObject.collide" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.TimeVariantCollisionObject.obstacle_at_time">
+<code class="descname">obstacle_at_time</code><span class="sig-paren">(</span><em>self: pycrcc.TimeVariantCollisionObject</em>, <em>arg0: int</em><span class="sig-paren">)</span> &#x2192; pycrcc.CollisionObject<a class="headerlink" href="#pycrcc.TimeVariantCollisionObject.obstacle_at_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.TimeVariantCollisionObject.time_end_idx">
+<code class="descname">time_end_idx</code><span class="sig-paren">(</span><em>self: pycrcc.TimeVariantCollisionObject</em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#pycrcc.TimeVariantCollisionObject.time_end_idx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.TimeVariantCollisionObject.time_start_idx">
+<code class="descname">time_start_idx</code><span class="sig-paren">(</span><em>self: pycrcc.TimeVariantCollisionObject</em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#pycrcc.TimeVariantCollisionObject.time_start_idx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="shapegroup-class">
+<h2><code class="docutils literal notranslate"><span class="pre">ShapeGroup</span></code> class<a class="headerlink" href="#shapegroup-class" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pycrcc.ShapeGroup">
+<em class="property">class </em><code class="descclassname">pycrcc.</code><code class="descname">ShapeGroup</code><a class="headerlink" href="#pycrcc.ShapeGroup" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="pycrcc.ShapeGroup.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>self: pycrcc.ShapeGroup</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#pycrcc.ShapeGroup.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.ShapeGroup.add_shape">
+<code class="descname">add_shape</code><span class="sig-paren">(</span><em>self: pycrcc.ShapeGroup</em>, <em>arg0: pycrcc.Shape</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#pycrcc.ShapeGroup.add_shape" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.ShapeGroup.collide">
+<code class="descname">collide</code><span class="sig-paren">(</span><em>self: pycrcc.ShapeGroup</em>, <em>arg0: pycrcc.CollisionObject</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#pycrcc.ShapeGroup.collide" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.ShapeGroup.overlap">
+<code class="descname">overlap</code><span class="sig-paren">(</span><em>self: pycrcc.ShapeGroup</em>, <em>arg0: pycrcc.ShapeGroup</em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#pycrcc.ShapeGroup.overlap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.ShapeGroup.overlap_map">
+<code class="descname">overlap_map</code><span class="sig-paren">(</span><em>self: pycrcc.ShapeGroup</em>, <em>arg0: pycrcc.ShapeGroup</em><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#pycrcc.ShapeGroup.overlap_map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.ShapeGroup.size">
+<code class="descname">size</code><span class="sig-paren">(</span><em>self: pycrcc.ShapeGroup</em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#pycrcc.ShapeGroup.size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.ShapeGroup.unpack">
+<code class="descname">unpack</code><span class="sig-paren">(</span><em>self: pycrcc.ShapeGroup</em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#pycrcc.ShapeGroup.unpack" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="collisionchecker-class">
+<h2><code class="docutils literal notranslate"><span class="pre">CollisionChecker</span></code> class<a class="headerlink" href="#collisionchecker-class" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pycrcc.CollisionChecker">
+<em class="property">class </em><code class="descclassname">pycrcc.</code><code class="descname">CollisionChecker</code><a class="headerlink" href="#pycrcc.CollisionChecker" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="pycrcc.CollisionChecker.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>self: pycrcc.CollisionChecker</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#pycrcc.CollisionChecker.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.CollisionChecker.__str__">
+<code class="descname">__str__</code><span class="sig-paren">(</span><em>self: pycrcc.CollisionChecker</em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#pycrcc.CollisionChecker.__str__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.CollisionChecker.add_collision_object">
+<code class="descname">add_collision_object</code><span class="sig-paren">(</span><em>self: pycrcc.CollisionChecker</em>, <em>arg0: pycrcc.CollisionObject</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#pycrcc.CollisionChecker.add_collision_object" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.CollisionChecker.any_collides">
+<code class="descname">any_collides</code><span class="sig-paren">(</span><em>self: pycrcc.CollisionChecker</em>, <em>arg0: list</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#pycrcc.CollisionChecker.any_collides" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.CollisionChecker.collide">
+<code class="descname">collide</code><span class="sig-paren">(</span><em>self: pycrcc.CollisionChecker</em>, <em>arg0: pycrcc.CollisionObject</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#pycrcc.CollisionChecker.collide" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.CollisionChecker.find_all_colliding_objects">
+<code class="descname">find_all_colliding_objects</code><span class="sig-paren">(</span><em>self: pycrcc.CollisionChecker</em>, <em>arg0: pycrcc.CollisionObject</em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#pycrcc.CollisionChecker.find_all_colliding_objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.CollisionChecker.number_of_obstacles">
+<code class="descname">number_of_obstacles</code><span class="sig-paren">(</span><em>self: pycrcc.CollisionChecker</em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#pycrcc.CollisionChecker.number_of_obstacles" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.CollisionChecker.obstacles">
+<code class="descname">obstacles</code><span class="sig-paren">(</span><em>self: pycrcc.CollisionChecker</em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#pycrcc.CollisionChecker.obstacles" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.CollisionChecker.raytrace">
+<code class="descname">raytrace</code><span class="sig-paren">(</span><em>self: pycrcc.CollisionChecker</em>, <em>arg0: float</em>, <em>arg1: float</em>, <em>arg2: float</em>, <em>arg3: float</em>, <em>arg4: bool</em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#pycrcc.CollisionChecker.raytrace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.CollisionChecker.time_slice">
+<code class="descname">time_slice</code><span class="sig-paren">(</span><em>self: pycrcc.CollisionChecker</em>, <em>arg0: int</em><span class="sig-paren">)</span> &#x2192; pycrcc.CollisionChecker<a class="headerlink" href="#pycrcc.CollisionChecker.time_slice" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pycrcc.CollisionChecker.window_query">
+<code class="descname">window_query</code><span class="sig-paren">(</span><em>self: pycrcc.CollisionChecker</em>, <em>arg0: pycrcc.RectAABB</em><span class="sig-paren">)</span> &#x2192; pycrcc.CollisionChecker<a class="headerlink" href="#pycrcc.CollisionChecker.window_query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="commonroad_io.html" class="btn btn-neutral float-right" title="commonroad-io Interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="CommonRoad-Collision-Checker Python API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Technical University of Munich, Professorship Cyber-Physical Systems
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

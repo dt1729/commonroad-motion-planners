@@ -1,0 +1,65 @@
+.. _visualization-manual:
+
+====================
+Visualization Manual
+====================
+
+The visualization of collision objects follows the same scheme as for `commonroad-io <https://pypi.org/project/commonroad-io/>`_ and only adds functionalities for plotting all kinds of objects that were introduced in :ref:`Overview <overview>`. Correspondingly, this manual describes only the added functionalities. For the basics refer to the visualization manual of `commonroad-io <https://pypi.org/project/commonroad-io/>`_.
+
+Importing ``draw_object``
+-------------------------
+For being able to plot collsion shapes, ``draw_object`` needs to be imported from ``commonroad_cc``:
+
+.. code-block:: python
+
+	from commonroad_cc.visualization.draw_dispatch import draw_object
+
+Afterwards this function can be used both, `commonroad-io <https://pypi.org/project/commonroad-io/>`_ and Collision_Checker.
+
+Additional ``draw_params``
+--------------------------
+
+The settings dict ``draw_params`` introduced in `commonroad-io <https://pypi.org/project/commonroad-io/>`_ is extended by additional entries 
+
+.. code-block:: python
+	
+    draw_params = {'collision': {
+			   'rectobb': {'facecolor': '#ff9999',
+		                       'edgecolor': '#000000',
+		                       'zorder': 20},
+		           'rectaabb': {'facecolor': '#ff9999',
+		                        'edgecolor': '#000000',
+		                        'zorder': 20},
+		           'triangle': {'facecolor': '#ff9999',
+		                        'edgecolor': '#000000',
+		                        'zorder': 20},
+		           'circle': {'facecolor': '#ff9999',
+		                      'edgecolor': '#000000',
+		                      'zorder': 20},
+		           'point': {'facecolor': '#ff9999',
+		                     'zorder': 20},
+		           'polygon': {'facecolor': '#ff9999',
+		                       'edgecolor': '#000000',
+		                       'zorder': 20,
+		                       'draw_mesh': False}
+			   }
+		  }
+
+Drawing shapes
+---------------
+
+As for `commonroad-io <https://pypi.org/project/commonroad-io/>`_, the visualization is based on `matplotlib <https://pypi.org/project/matplotlib/>`_. Therefore all commands from `matplotlib <https://pypi.org/project/matplotlib/>`_ can be used. A simple example for plotting a triangle with custom settings defined by ``draw_params`` would be:
+
+.. code-block:: python
+
+	import os
+	import matplotlib.pyplot as plt
+	from commonroad_cc.visualization.draw_dispatch import draw_object
+	
+	triangle = pycrcc.Triangle(0.0, 0.0, 4.0, 0.0, 2.0, 2.0)
+	plt.figure(figsize=(10, 10))
+	draw_object(triangle, draw_params={'collision': {'facecolor': 'green', 'zorder': 20}})
+	plt.gca().axis('equal')
+
+	plt.tight_layout()
+	plt.show()
